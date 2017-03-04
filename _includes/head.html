@@ -1,0 +1,39 @@
+	<head>
+		<title>{% if page.title %}{{ page.title | escape }} | {{ site.title }}{% else %}{{ site.title | escape }}{% endif %}</title>
+
+  		{% include meta.html %}
+		
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{{ '/assets/css/reset.css' | prepend: site.baseurl }}">
+		<link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl }}">
+		<link rel="stylesheet" href="{{ '/assets/css/post.css' | prepend: site.baseurl }}">
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+		<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
+		<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
+
+	</head>
+	<body id="top">
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="/" class="image avatar"><img src="{{ site.baseurl }}/images/logo.png" alt="" /></a>
+					<ul>
+						<li><a href="/category/FrontEnd/">#프론트앤드개발</a></li>
+						<li><a href="/category/Design/">#디자인</a></li>
+						<li><a href="/category/WebPlan/">#기획</a></li>
+						<li class="enter"><a href="/category/JSJquery/">#JS/Jquery</a></li>
+						<li><a href="/category/HtmlCss/">#HTML,CSS</a></li>
+						<li class="enter"><a href="/category/MobileWeb/">#모바일</a></li>
+						<li><a href="/category/Homepage/">#홈페이지</a></li>
+						<li class="enter"><a href="/category/ResponsiveWeb/">#반응형웹</a></li>
+						<li><a href="/category/Wordpress/">#워드프레스</a></li>
+						<li class="enter"><a href="/category/Cafe24/">#카페24</a></li>
+						<li><a href="/category/MakeShop/">#메이크샵</a></li>
+						<li><a href="/category/ShoppingMall/">#쇼핑몰</a></li>
+						<li class="enter"><a href="/category/ETC/">#기타</a></li>
+						<li><a href="/category/GraphicDesign/">#인쇄디자인</a></li>
+					</ul>
+				</div>
+				{% include footer.html %}
+			</header>

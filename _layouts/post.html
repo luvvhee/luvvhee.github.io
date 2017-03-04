@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<div id="main">
+
+  <section class="section-padding post" itemprop="articleBody">
+    <h2>{{ page.title }}</h2>
+    <div class="post_wrap">
+    {{ content }}
+    </div>
+  </section>
+
+  <div class="row">
+
+   {% if page.previous.url %}
+    <div class="prev 6u 12u$(xsmall) preview">
+        <span><< previous</span>
+        <a  href="{{page.previous.url | prepend: site.baseurl }}"  class="image fit thumb" itemprop="url"><img src="{{ page.previous.image-sm }}" alt="" /></a>
+        <a href="{{page.previous.url | prepend: site.baseurl }}" class="txt" itemprop="url">
+          <span class="previousiew__date" itemprop="datePublished" datetime="{{ page.previous.date | date_to_xmlschema }}">{{ page.previous.date | date: "%b %-d, %Y" }}</span>
+          <h3 class="previousiew__header" itemprop="name">{{ page.previous.title }}</h3>
+         <!--  <p class="previousiew__excerpt" itemprop="description">{{ page.previous.content | strip_html | truncatewords: 10 }}</p>   -->
+         {% include post_tags.html %}                
+        </a>        
+    </div>
+  {% endif %}
+ 
+
+   {% if page.next.url %}
+    <div class="next 6u 12u$(xsmall) preview">
+        <span>Next >></span>
+        <a  href="{{page.next.url | prepend: site.baseurl }}"  class="image fit thumb" itemprop="url"><img src="{{ page.next.image-sm }}" alt="" /></a>
+        <a href="{{page.next.url | prepend: site.baseurl }}" class="txt" itemprop="url">
+          <span class="preview__date" itemprop="datePublished" datetime="{{ page.next.date | date_to_xmlschema }}">{{ page.next.date | date: "%b %-d, %Y" }}</span>
+          <h3 class="preview__header" itemprop="name">{{ page.next.title }}</h3>
+          <p class="preview__excerpt" itemprop="description">{{ page.next.content | strip_html | truncatewords: 10 }}</p>                  
+        </a>        
+    </div>
+    {% endif %}
+
+  </div>
+
+</div>

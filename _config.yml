@@ -1,0 +1,56 @@
+# Name of your site (displayed in the header)
+name: kjuhee
+
+# Short bio or description (displayed in the header)
+description: kjuhee's Portfolio
+
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: https://kjuhee0712.github.io/images/logo.png
+
+
+
+
+# Site settings
+email: kjuhee0712@gmail.com 
+baseurl: "https://kjuhee0712.github.io"
+paginate: 10
+paginate_path: "/blog/page-:num"
+google_analytics: 
+
+# SEO settings
+title: kjuhee's Portfolio.
+url: "https://kjuhee0712.github.io"
+# twitter_username: 
+default_img: https://kjuhee0712.github.io/images/logo.png
+
+# Profile settings
+name: kjuhee's Portfolio.
+profile_img:  https://kjuhee0712.github.io/images/logo.png
+# profile: 
+# social:
+# github: 
+
+# Build settings
+include: ["_categories"]
+exclude: ["_screenshots", "Gemfile", "Gemfile.lock"]
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+syntax_highlighter: rouge
+syntax_highlighter_opts:
+# Use existing pygments syntax highlighting css
+css_class: 'highlight'
+
+# Sass
+sass:
+  style: expanded
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+  
+# Gems
+gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer]
