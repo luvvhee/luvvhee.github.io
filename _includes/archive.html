@@ -1,8 +1,8 @@
 
-<div id="main">
+<div id="right">
     <section id="two">
       <h2>{{ page.title }}</h2>
-      <div class="row">
+      <div class="post_row">
         {% for post in site.categories[page.title] %}
         <article class="6u 12u$(xsmall) preview" itemprop="blogPost">
           <a href="{{ post.url | prepend: site.baseurl }}"" class="image fit thumb" itemprop="url"><img src="{{ post.image-sm }}" alt="" /></a>
