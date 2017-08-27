@@ -10,7 +10,7 @@ layout: default
 			<h2>About me.</h2>
 		</header>
 		<p>
-			안녕하세요. 권주희입니다. <br>
+			안녕하세요. 권다희입니다. <br>
 			어떻게하면 약소한 실력을 활용하여 만족 할 만한 사이트를 만들까 매일 고민하고 있으며,<br>
 			참여한 모든 프로젝트와, 내손으로 만든 모든 사이트를 아끼고 끝까지 책임감으로 돌보려 합니다.<br>
 			기획자로, 디자이너로, 지금은 퍼블리셔로 좀더 나은 서비스를 제공하고자 열심히 공부하고 있습니다.<br>
@@ -26,7 +26,7 @@ layout: default
 	<!-- Two -->
 	<section id="two">
 		<h2>Recent Work</h2>
-		<div class="post_row">
+		<div class="post_row">`
 			{% for post in paginator.posts %}
 			<article class="6u 12u$(xsmall) preview" itemprop="blogPost">
 				<a href="{{ post.url | prepend: site.baseurl }}" class="image fit thumb" itemprop="url"><img src="{{ post.image-sm }}" alt="" /></a>
