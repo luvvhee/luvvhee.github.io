@@ -1,50 +1,51 @@
 ---
 layout: default
 ---
-<div id="right">
+<div id="main">
+  <article>
+    <header>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    </header>
 
-  <section class="section-padding post" itemprop="articleBody">
-    <h2>{{ page.title }}</h2>
-    <div class="post_wrap">
-    {{ content }}
-    </div>
-  </section>
+    <section>
+      {{ content }}
+    </section>
 
-  <div class="post_row prenext">
+    <footer>
+      <div class="row">
+      {% if page.previous %}
+        <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt">
+          <header>
+            <h2><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></h2>
+          </header>
+          <section>
+            {{ page.previous.excerpt }}
+          </section>
+          <footer>
+            <ul class="actions">
+              <li><a href="{{ page.previous.url }}" class="button">Read More</a></li>
+            </ul>
+          </footer>
+        </article>
+      {% endif %}
 
-   {% if page.previous.url %}
-    <div class="prev 6u 12u$(xsmall) preview">
-        <span class="txt"><< 이전 작업</span>
-        <a  href="{{page.previous.url | prepend: site.baseurl }}"  class="image fit thumb" itemprop="url"><img src="{{ page.previous.image-sm }}" alt="" /></a>
-        <a href="{{page.previous.url | prepend: site.baseurl }}" class="txt" itemprop="url">
-          <h3 class="preview__header" itemprop="name">{{ page.previous.title }}</h3>
-          <!-- <p class="preview__date" itemprop="datePublished" datetime="{{ page.previous.date | date_to_xmlschema }}">{{ page.previous.date | date: "%Y년 %-m월부터 약 %-d개월 이내 완료" }}</p> -->
-        </a>   
-       <!--  <ul class="preview__category">
-          {% for categories in page.previous.categories %}
-            <li><a href="/category/{{ categories }}/"># {{ categories }}</a> </li>      
-          {% endfor %}
-        </ul>    -->  
-    </div>
-  {% endif %}
- 
-
-   {% if page.next.url %}
-    <div class="next 6u 12u$(xsmall) preview">
-        <span class="txt">다음작업 >></span>
-        <a  href="{{page.next.url | prepend: site.baseurl }}"  class="image fit thumb" itemprop="url"><img src="{{ page.next.image-sm }}" alt="" /></a>
-        <a href="{{page.next.url | prepend: site.baseurl }}" class="txt" itemprop="url">
-          <h3 class="preview__header" itemprop="name">{{ page.next.title }}</h3>
-          <!-- <p class="preview__date" itemprop="datePublished" datetime="{{ page.next.date | date_to_xmlschema }}">{{ page.next.date | date: "%Y년 %-m월부터 약 %-d개월 이내 완료" }}</p> -->
-        </a>   
-        <!-- <ul class="preview__category">
-          {% for categories in page.next.categories %}
-            <li><a href="/category/{{ categories }}/"># {{ categories }}</a> </li>      
-          {% endfor %}
-        </ul>   -->     
-    </div>
-    {% endif %}
-
-  </div>
-
+      {% if page.next %}
+        <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt f-right">
+          <header>
+            <h2><a href="{{ page.next.url }}">{{ page.next.title }}</a></h2>
+          </header>
+          <section>
+            {{ page.next.excerpt | markdownify }}
+          </section>
+          <footer>
+            <ul class="actions">
+              <li><a href="{{ page.next.url }}" class="button">Read More</a></li>
+            </ul>
+          </footer>
+        </article>
+      {% endif %}
+      </div>
+    </footer>
+  </article>
 </div>
