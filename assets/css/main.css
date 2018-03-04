@@ -2696,7 +2696,7 @@
 				content: '\f1ce';
 			}
 
-		.poptrox-popup .pic { overflow-x:visible; overflow-y:auto; }
+		.poptrox-popup .pic { overflow-x:visible; overflow-y:auto; -webkit-overflow-scrolling:touch;}
 		.poptrox-popup .pic img { width:auto; max-width:100%; height:auto; max-height:100%; }
 		.poptrox-popup .caption {
 			background: #fff;
